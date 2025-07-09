@@ -52,9 +52,19 @@ def send_feishu_message(webhook_url: str, text: str, image_key: str = None):
     else:
         # 纯文本消息
         payload = {
-            "msg_type": "text",
+            "msg_type": "post",
             "content": {
-                "text": text + " @所有人"
+                "post": {
+                    "zh_cn": {
+                        "title": "下班提醒",
+                        "content": [
+                            [
+                                {"tag": "text", "text": text + " "},
+                                {"tag": "at", "user_id": "all"}
+                            ]
+                        ]
+                    }
+                }
             }
         }
 
