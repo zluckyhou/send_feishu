@@ -1,9 +1,9 @@
 import os
 import requests
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 from datetime import datetime, timedelta, timezone
 # 加载环境变量
-load_dotenv()
+# load_dotenv()
 
 def get_tenant_access_token(app_id: str, app_secret: str) -> str:
     url = "https://open.feishu.cn/open-apis/auth/v3/tenant_access_token/internal"
