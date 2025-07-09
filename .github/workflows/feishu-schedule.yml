@@ -5,8 +5,11 @@ on:
     # GitHub Actions 使用的是 UTC 时间
     # 北京时间 11:50 = UTC 03:50
     # 北京时间 17:30 = UTC 09:30
+    # 北京时间 19:30 = UTC 09:30
     - cron: "50 3 * * *"
     - cron: "30 9 * * *"
+    - cron: "30 11 * * *"
+  workflow_dispatch:
 
 jobs:
   send-feishu-message:
